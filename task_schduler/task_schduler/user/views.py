@@ -18,10 +18,10 @@ def login(request):
         else:
             messages.error(request,'Invalid Email or Password')
             return redirect("login")
-    return render(request,'studentbook/login.html')
+    return render(request,'user/login.html')
 
 def signup(request):
-    return render(request,'studentbook/signup.html')
+    return render(request,'user/signup.html')
 
 def register_user(request):
     if request.method == 'POST':
@@ -39,7 +39,7 @@ def register_user(request):
 def home(request):
     if request.session.has_key('is_logged'):
 
-        return render(request,'studentbook/home.html')
+        return render(request,'user/home.html')
     return redirect('login')
 
 def logout(request):

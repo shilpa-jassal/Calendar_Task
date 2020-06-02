@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('newapp.urls')),
    
-    url(r'^user/',include('user.urls')),
+    url(r'^',include('user.urls')),
      
  
 ]
