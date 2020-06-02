@@ -9,12 +9,17 @@ import calendar
 from .models import *
 from .utils import Calendar
 from .forms import EventForm
+from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from .models import *
+ 
 
 def index(request):
     return HttpResponse('hello')
-
+ 
 class CalendarView(generic.ListView):
     model = Event
+   
     template_name = 'cal/calendar.html'
 
     def get_context_data(self, **kwargs):

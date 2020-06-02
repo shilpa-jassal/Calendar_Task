@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from django.contrib.auth.models import User
 class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -11,3 +11,5 @@ class Event(models.Model):
     def get_html_url(self):
         url = reverse('newapp:event_edit', args=(self.id,))
         return f'<a href="{url}"> {self.title} </a>'
+
+ 
